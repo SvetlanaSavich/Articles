@@ -1,0 +1,23 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingExcludedTypes": "Request",
+      "samplingSettings": {
+        "isEnabled": true
+      }
+    }
+  },
+  "extensions": {
+    "Swashbuckle": {
+      "XmlPath": "ArticlesFaaS.xml",
+      "Documents": [
+        {
+          "Title": "Articles.FaaS",
+          "Version": "v1",
+          "Description": "Swagger for azure functions."
+        }
+      ]
+    }
+  }
+}

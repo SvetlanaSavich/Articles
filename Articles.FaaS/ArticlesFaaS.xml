@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Articles.FaaS</name>
+    </assembly>
+    <members>
+        <member name="M:Articles.FaaS.ArticlesFunctions.GetArticles(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets all articles.
+            </summary>
+            <param name="req">A <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"></see></param>
+            <returns>/>Returns all articles.</returns>
+            <response code="200">Returns all articles.</response>
+            <response code="500">Server error.</response>
+        </member>
+        <member name="M:Articles.FaaS.ArticlesFunctions.GetArticle(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Gets the article by id.
+            </summary>
+            <param name="request">A <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/>.</param>
+            <param name="articleId">An article identifier.</param>
+            <returns>A <see cref="T:Articles.Services.ArticleManagement.ArticleDTO"/>.</returns>
+            <response code="200">Returns article.</response>
+            <response code="404">Returns when article is not found.</response>
+            <response code="500">Server error.</response>
+        </member>
+        <member name="M:Articles.FaaS.ArticlesFunctions.AddArticle(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Adds new article.
+            </summary>
+            <param name="request">A <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/></param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>.</returns>
+            <response code="200">Returns the newly created article.</response>
+            <response code="400">If the article is not valid.</response>
+            <response code="409">If the user with given userId or article category with given categoryId does not exists or article with same title exists.</response>
+            <response code="500">Server error.</response>
+        </member>
+        <member name="M:Articles.FaaS.ArticlesFunctions.UpdateArticle(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Updates an existing article.
+            </summary>
+            <param name="request">A <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/></param>
+            <param name="articleId">An updating article id.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>.</returns>
+            <response code="204">Article is updated.</response>
+            <response code="400">If the article is not valid.</response>
+            <response code="404">Returns when article is not found.</response>
+            <response code="409">If the user with given userId or article category with given categoryId does not exists.</response>
+            <response code="500">Server error.</response>
+        </member>
+        <member name="M:Articles.FaaS.ArticlesFunctions.DeleteArticle(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Deletes an existing article.
+            </summary>
+            <param name="request">A <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/>.</param>
+            <param name="articleId">The article identifier.</param>
+            <returns>A <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/>.</returns>
+            <response code="204">Article is deleted.</response>
+            <response code="404">Returns when article is not found.</response>
+            <response code="500">Server error.</response>
+        </member>
+    </members>
+</doc>
